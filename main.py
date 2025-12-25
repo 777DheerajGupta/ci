@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
 
 fruits = ['apple', 'blueberry', 'cherry', 'orange']
-counts = [100, 20, 300, 55]
+counts = [100, 200, 300, 55]
 bar_labels = ['red', 'blue', '_red', 'orange']
 bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
