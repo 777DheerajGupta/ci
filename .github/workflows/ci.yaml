@@ -34,13 +34,10 @@ jobs:
         REPO_TOKEN: ${{ secrets.TOKEN }}
       run: |
 
-        echo "# First Line of our report" > report.md
+        echo "# First Line of our report" >> report.md
         echo "## Bar Plots" >> report.md
-
-        cml publish bars.png --md >> report.md
-
+        echo '![](./bars.png "Bar plot")' >> report.md
         echo "## Line Plots" >> report.md
-
-        cml publish lines.png --md >> report.md
+        echo '![](./lines.png "Bar plot")' >> report.md
 
         cml comment create report.md
