@@ -34,10 +34,16 @@ jobs:
         REPO_TOKEN: ${{ secrets.TOKEN }}
       run: |
 
-        echo "# First Line of our report" >> report.md
-        echo "## Bar Plots" >> report.md
-        echo '![](./bars.png "Bar plot")' >> report.md
-        echo "## Line Plots" >> report.md
-        echo '![](./lines.png "Bar plot")' >> report.md
+        echo "# First Line of our report" > README.md
+        echo "## Bar Plots" >> README.md
+        echo '![](./bars.png "Bar plot")' >> README.md
+        echo "## Line Plots" >> README.md
+        echo '![](./lines.png "Line plot")' >> README.md
 
-        cml comment create report.md
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add README.md
+        git commit -m "Auto-update README from CI"
+        git push
+
+        cml comment create README.md
